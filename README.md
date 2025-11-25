@@ -11,6 +11,6 @@ Then, it prepares and sends an email through SMTP to any emails present in .\sou
 Arrow Team | Brendon Mourao
 
 ## NOTES
-Included is a ".source [sample]" folder, this includes the needed .env file & distributions.txt referenced in the scripts. These two files are used to build various variables witin the script and where to send the results (results are always saved locally).
+Included is a ".source [sample]" folder, this includes the needed files/variables referenced in the scripts. Rename this folder to just ".source" and edit the keys in the .env file as needed.
 
-Rename this folder to just ".source" and edit the keys in the .env file as needed.
+This folder is used to build various variables witin the script and where to send the results (results are always saved locally).

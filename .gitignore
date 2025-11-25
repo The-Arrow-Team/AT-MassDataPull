@@ -9,6 +9,8 @@ logs/
 
 # ignore python cache 
 *.pyc
+__pycache__/
+*/__pycache__/
 
 # Ignore system files
 .DS_Store

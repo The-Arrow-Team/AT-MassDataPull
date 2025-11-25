@@ -3,7 +3,7 @@ import requests
 from dotenv import load_dotenv
 from pathlib import Path
 
-# get 
+# Get auth data 
 def get_auth(envData):
     authURL = envData.get("NINJA_AUTH_ENDPOINT")
     payload = {
@@ -25,14 +25,12 @@ def get_auth(envData):
 # Get orgs
 def get_orgs(envData, baseURL, authToken):
     endpoint = envData.get("NINJA_ORGS_ENDPOINT")
-    url = f'{baseURL}{endpoint}'
-    
+    assetsURL = f'{baseURL}{endpoint}'
     headers = {
         "Authorization": f'Bearer {authToken}',
         "Accept": "application/json"
     }
-    
-    resp = requests.get(url, headers=headers)
+    resp = requests.get(URL=assetsURL, headers=headers)
     orgData = resp.json() 
     return orgData
 
@@ -40,12 +38,10 @@ def get_orgs(envData, baseURL, authToken):
 def get_devices(envData, baseURL, authToken):   
     endpoint = envData.get("NINJA_DEVICES_ENDPOINT")
     url = f'{baseURL}{endpoint}'
-    
     headers = {
         "Authorization": f'Bearer {authToken}',
         "Accept": "application/json"
     }
-    
     resp = requests.get(url, headers=headers)
     deviceData = resp.json()
     return deviceData
@@ -76,5 +72,3 @@ if __name__ == "__main__":
     
     authData = get_auth(envData)
     authToken = authData["authToken"]
-    
-    print(get_devices(envData=envData, baseURL=baseURL, authToken=authToken))

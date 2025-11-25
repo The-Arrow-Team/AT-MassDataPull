@@ -6,11 +6,11 @@ from pathlib import Path
 # import custom functions
 import validation
 import sendMail
-from vendors import Cove
-from vendors import Ninja
-from vendors import O365
-from vendors import ScreenConnect
-from vendors import SentinelOne
+from dashboards import Cove
+from dashboards import Ninja
+from dashboards import O365
+from dashboards import ScreenConnect
+from dashboards import SentinelOne
 
 # Load the .env file
 path_env = Path(__file__).resolve().parent.parent / ".source" / ".env" # Resolve path to ../.source/.env relative to this file
@@ -44,10 +44,17 @@ screenconnectAuth = ScreenConnect.get_auth()
 
 
 # SentinelOne
-sentintelAuth = SentinelOne.get_auth()
+sentintelAuth = SentinelOne.get_auth(envData)
 
 
 # main script
 if __name__ == "__main__":
+    print('******************** Ninja One ********************')
     for num, org in enumerate(ninjaSummary, start=1):
         print(f'Organization number {num}: {org}')
+    print('***************************************************')
+    print('')
+    print('******************* SentinelOne *******************')
+    for :
+        print()
+    print('***************************************************')
